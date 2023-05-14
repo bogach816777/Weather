@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Wheather</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230514143444">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+			</div>
+		</header>
+		<main class="page">
+
+			<div class="page__weather__container">
+
+				<div class="block">
+					<div class="block__item">
+						<div class="weather__image">
+							<img id="image_wheather" src="" alt="">
+						</div>
+						<div class="cureent__postion" data-da=".block,816,2">
+							<img src="img/icons/04.svg" alt="">
+							<span id="position"></span>
+						</div>
+					</div>
+
+					<div class="weather__cur-temp"><span id="current_temp"></span>&deg;</div>
+					<h1 class="wheather__desc" id="current_wheather"></h1>
+					<div class="weather__cur-date" id="cur-date">
+						<span class="number__date" id="number-date"></span>
+						<span class="number__date" id="month-date"></span>
+						<br>
+						<span class="number__date another-time" id="day-date"></span>
+						<span class="number__date another-time another-time-border" id="time-date"></span>
+					</div>
+					<div class="weather__another another">
+						<div class="another__wind wind">
+							<img src="img/icons/01.svg" alt="" class="wind__image">
+							<h3 class="wind__title">Wind <span id="wind"></span> km/h</h3>
+						</div>
+						<div class="another__wind wind">
+							<img src="img/icons/02.svg" alt="" class="wind__image">
+							<h3 class="wind__title">Hum <span id="hum"></span></h3>
+						</div>
+						<div class="another__wind wind">
+							<img src="img/icons/03.svg" alt="" class="wind__image">
+							<h3 class="wind__title">Rain <span id="rain"></span></h3>
+						</div>
+
+
+					</div>
+					<div class="hourly__wheather">
+						<a href="#" data-popup="#popup" class="link title__wheather">Hourly Wheather</a>
+						<div id="popup" aria-hidden="true" class="popup">
+							<div class="popup__wrapper">
+								<div class="popup__content">
+									<button data-close type="button" class="popup__close">Закрити</button>
+									<div class="popup__text">
+										<div class="hour__item">
+											<h3 class="hour__title">Hour</h3>
+											<ul class="hour__list">
+												<li id="hour1" class="hour__link">00:00</li>
+												<li id="hour2" class="hour__link">02</li>
+												<li id="hour3" class="hour__link">04</li>
+												<li id="hour4" class="hour__link">06</li>
+												<li id="hour5" class="hour__link">08</li>
+												<li id="hour6" class="hour__link">10</li>
+												<li id="hour7" class="hour__link">12</li>
+												<li id="hour8" class="hour__link">14</li>
+												<li id="hour9" class="hour__link">16</li>
+												<li id="hour10" class="hour__link">18</li>
+												<li id="hour11" class="hour__link">20</li>
+												<li id="hour12" class="hour__link">22</li>
+											</ul>
+										</div>
+										<div class="hour__item">
+											<h3 class="hour__title">Apparent Temperature</h3>
+											<ul class="hour__list">
+												<li class="hour__link"><span id="hourdeg1"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg2"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg3"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg4"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg5"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg6"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg7"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg8"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg9"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg10"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg11"></span>&deg;</li>
+												<li class="hour__link"><span id="hourdeg12"></span>&deg;</li>
+
+											</ul>
+										</div>
+										<div class="hour__item">
+											<h3 class="hour__title">Rain</h3>
+											<ul class="hour__list">
+												<li id="hourrat1" class="hour__link">30</li>
+												<li id="hourrat2" class="hour__link">30</li>
+												<li id="hourrat3" class="hour__link">30</li>
+												<li id="hourrat4" class="hour__link">30</li>
+												<li id="hourrat5" class="hour__link">30</li>
+												<li id="hourrat6" class="hour__link">30</li>
+												<li id="hourrat7" class="hour__link">30</li>
+												<li id="hourrat8" class="hour__link">30</li>
+												<li id="hourrat9" class="hour__link">30</li>
+												<li id="hourrat10" class="hour__link">30</li>
+												<li id="hourrat11" class="hour__link">30</li>
+												<li id="hourrat12" class="hour__link">30</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="daily">
+						<div class="daily__body body-cards">
+							<p class="body-cards__temp"><span id="temp2">27</span>&deg;</p>
+							<img src="img/image/Sun.svg" alt="" class="body-cards__image" id="image2">
+							<h4 class="body-cards__day" id="day2">Sunday</h4>
+						</div>
+						<div class="daily__body body-cards">
+							<p class="body-cards__temp"><span id="temp3">27</span>&deg;</p>
+							<img src="img/image/Sun.svg" alt="" class="body-cards__image" id="image3">
+							<h4 class="body-cards__day" id="day3">Sunday</h4>
+						</div>
+						<div class="daily__body body-cards">
+							<p class="body-cards__temp"><span id="temp4">27</span>&deg;</p>
+							<img src="img/image/Sun.svg" alt="" class="body-cards__image" id="image4">
+							<h4 class="body-cards__day" id="day4">Sunday</h4>
+						</div>
+						<div class="daily__body body-cards">
+							<p class="body-cards__temp"><span id="temp5">27</span>&deg;</p>
+							<img src="img/image/Sun.svg" alt="" class="body-cards__image" id="image5">
+							<h4 class="body-cards__day" id="day5">Sunday</h4>
+						</div>
+						<div class="daily__body body-cards">
+							<p class="body-cards__temp"><span id="temp6">27</span>&deg;</p>
+							<img src="img/image/Sun.svg" alt="" class="body-cards__image" id="image6">
+							<h4 class="body-cards__day" id="day6">Sunday</h4>
+						</div>
+						<div class="daily__body body-cards">
+							<p class="body-cards__temp"><span id="temp7">27</span>&deg;</p>
+							<img src="img/image/Sun.svg" alt="" class="body-cards__image" id="image7">
+							<h4 class="body-cards__day" id="day7">Sunday</h4>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+		<!-- Стилі для body -->
+		<style>
+			.lock body {
+				overflow: hidden;
+				touch-action: none;
+				overscroll-behavior: none;
+				background-color: #91BEF3;
+
+			}
+
+			.loading body {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			.loaded body {
+				transition: opacity 0.5s ease 0s;
+				opacity: 1;
+				visibility: visible;
+			}
+		</style>
+		<div id="fls-preloader">
+			<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
+			<!-- Стилі для прелоадера -->
+			<style>
+				* {
+					padding: 0px;
+					margin: 0px;
+					border: 0px;
+				}
+
+				*,
+				*:before,
+				*:after {
+					box-sizing: border-box;
+				}
+
+				/* Головний блок */
+				.fls-preloader {
+					pointer-events: none;
+					z-index: -1;
+					position: fixed;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				.dot {
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					border-radius: 50%;
+					background-color: #FFFFFF;
+					color: transparent;
+				}
+
+				.cont .dot:nth-last-child(1) {
+					animation: jumpingAnimation 0.6s 0.1s ease-in infinite;
+				}
+
+				.cont .dot:nth-last-child(2) {
+					animation: jumpingAnimation 0.6s 0.2s ease-in infinite;
+				}
+
+				.cont .dot:nth-last-child(3) {
+					animation: jumpingAnimation 0.6s 0.3s ease-in infinite;
+				}
+
+				@keyframes jumpingAnimation {
+					0% {
+						transform: translate3d(0, 0, 0);
+					}
+
+					50% {
+						transform: translate3d(0, 15px, 0);
+					}
+
+					100% {
+						transform: translate3d(0, 0, 0);
+					}
+				}
+
+				/* Блок з елементами */
+				.fls-preloader__body {
+					padding: 0.93rem;
+					max-width: 31.25rem;
+					display: flex;
+					flex-direction: column;
+				}
+
+				/* Блок з лічильником */
+				.fls-preloader__counter {
+					font-size: 10rem;
+					display: none;
+				}
+
+				/* Прогресбар */
+				.fls-preloader__line {
+					display: none;
+				}
+
+				/* Лінія прогресбару */
+				.fls-preloader__line span {
+					display: inline-block;
+					transition: width 0.2s ease;
+					height: 0.8rem;
+					background-color: #7A956B;
+				}
+			</style>
+			<!-- Скріпт прелоадера -->
+			<script>
+				function preloader() {
+					const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+					const preloaderContainer = document.querySelector('#fls-preloader');
+					if (preloaderImages.length) {
+						const preloaderTemplate = `
+					<div class="fls-preloader">
+						<div class="fls-preloader__body">
+							<div class="fls-preloader__counter">0%</div>
+							<div class="fls-preloader__line"><span></span></div>
+							<div class="cont">
+								<div class="dot"></div>
+  								<div class="dot"></div>
+  								<div class="dot"></div>
+							</div>
+						</div>
+					</div>`;
+						document.querySelector('html').insertAdjacentHTML("beforeend", preloaderTemplate);
+
+						const
+							preloader = document.querySelector('.fls-preloader'),
+							showPecentLoad = document.querySelector('.fls-preloader__counter'),
+							showLineLoad = document.querySelector('.fls-preloader__line span'),
+							htmlDocument = document.documentElement;
+
+						let imagesLoadedCount = counter = progress = 0;
+
+						htmlDocument.classList.add('loading');
+						htmlDocument.classList.add('lock');
+
+						preloaderImages.forEach(preloaderImage => {
+							const imgClone = document.createElement('img');
+							if (imgClone) {
+								imgClone.onload = imageLoaded;
+								imgClone.onerror = imageLoaded;
+								preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+							}
+						});
+
+						function setValueProgress(progress) {
+							showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
+							showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+						}
+						showPecentLoad ? setValueProgress(progress) : null;
+
+						function imageLoaded() {
+							imagesLoadedCount++;
+							progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+							const intervalId = setInterval(() => {
+								counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+								counter >= 100 ? addLoadedClass() : null;
+							}, 10);
+						}
+
+						function addLoadedClass() {
+							htmlDocument.classList.add('loaded');
+							htmlDocument.classList.remove('lock');
+							htmlDocument.classList.remove('loading');
+							setInterval(() => {
+								preloader.remove();
+								preloaderContainer.remove();
+							}, 500);
+						}
+					} else {
+						preloaderContainer.remove();
+					}
+				}
+				preloader();
+			</script>
+		</div>
+	</div>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрити</button>
+				<div class="popup__text">
+					Text
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230514143444"></script>
+</body>
+
+</html>
